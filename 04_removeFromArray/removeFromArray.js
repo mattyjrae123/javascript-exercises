@@ -5,7 +5,7 @@ const removeFromArray = function(array) {
     // iterate over array items from first argument
     for (let i =  0; i < array.length; i += 1) {
 
-      if (array[i] == arguments[arg]) {
+      if (array[i] === arguments[arg]) {
         array.splice(i, 1);
       }
     }
