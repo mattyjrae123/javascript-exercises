@@ -1,5 +1,5 @@
 const sumAll = function(first, last) {
-  if (first < 0 || last < 0) {
+  if (!validParameters(first, last)) {
     return "ERROR";
   }
 
@@ -11,12 +11,25 @@ const sumAll = function(first, last) {
 
   let sum = 0;
 
-  for (; first <= last; first += 1) {
+  while (first <= last) {
     sum += first;
+    first += 1;
   }
 
   return sum;
 };
+
+function validParameters(first, last) {
+  if (typeof first != "number" || typeof last != "number") {
+    return false;
+  }
+
+  if (first < 0 || last < 0) {
+    return false;
+  }
+
+  return true;
+}
 
 // Do not edit below this line
 module.exports = sumAll;
