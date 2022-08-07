@@ -8,8 +8,14 @@ const ftoc = function(tempFahrenheit) {
   return tempCelcius;
 };
 
-const ctof = function() {
+const ctof = function(tempCelcius) {
+  let tempFahrenheit = tempCelcius / (5/9) + 32;
 
+  if (tempFahrenheit % 1 !== 0) {
+    return +tempFahrenheit.toFixed(1);
+  }
+
+  return tempFahrenheit;
 };
 
 // Do not edit below this line
